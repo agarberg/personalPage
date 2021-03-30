@@ -17,7 +17,6 @@ function Animals() {
         <img 
           key={i}
           src={animal}
-          style={{maxWidth: 400}}
         />
       )}
     </div>

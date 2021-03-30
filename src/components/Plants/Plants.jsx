@@ -16,7 +16,6 @@ function Plants() {
         <img 
           key={i}
           src={plant}
-          style={{maxWidth: 400}}
         />
       )}
     </div>
