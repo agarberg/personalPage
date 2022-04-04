@@ -1,45 +1,35 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import Animals from '../Animals/Animals.jsx';
 import Plants from '../Plants/Plants.jsx';
-import Home from '../Home/Home.jsx';
-import AnimalDetail from '../AnimalDetail/AnimalDetail';
+
+import BottomNav from '../BottomNav/BottomNav';
+import UpperNav from '../UpperNav/UpperNav';
 
 function App() {
   return (
-    // <Router> tag surrounds entire return
+    <>
+   
     <Router>
       <div className="App">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/plants">Plants</Link>
-          </li>
-          <li>
-            <Link to="/animals">Animals</Link>
-          </li>
-        </ul>
-        
-        <h1>SPAs!</h1>
+        <UpperNav/>         
         {/* route tag surrounds individual components */}
         <Route path="/" exact> 
-          <Home />
+        
         </Route>
         <Route path="/plants">
           <Plants />
         </Route>
-        <Route path="/animals" exact>
+        <Route path="/animals">
           <Animals />
         </Route>
-        <Route path="/animals/:id">
-          <AnimalDetail />
-        </Route>
       </div>
+      <BottomNav/>
     </Router>
+    </>
   );
 }
 
